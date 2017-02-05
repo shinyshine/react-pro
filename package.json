@@ -1,0 +1,25 @@
+{
+  "name": "react-basic",
+  "version": "1.0.0",
+  "description": "react-basic",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:pro": "webpack -p && cp src/index.html dist/index.html"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "dorryL",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
