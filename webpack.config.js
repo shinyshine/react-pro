@@ -17,6 +17,14 @@ var config = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif|svg)$/i,
+                loader: 'file-loader',
+                query :{
+                    limit: 200,
+                    name: 'img/[name]-[hash:5].[ext]'
+                }
+            },
+            {
                 test: /\.js$/,
 				exclude: path.resolve(__dirname, 'node_modules'),  //必须是绝对路径或者是正则表达式
                 include: SRC_DIR,  //必须是绝对路径或者是正则表达式
