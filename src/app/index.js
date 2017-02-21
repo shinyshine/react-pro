@@ -1,4 +1,5 @@
 // console.log("it work~~");
+import './css/common.css';
 import React from "react";
 import { render } from "react-dom";
 
