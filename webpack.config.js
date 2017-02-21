@@ -26,7 +26,29 @@ var config = {
                 }
             },
             {
+                test: /\.less$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
+                include: SRC_DIR,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('postcss-smart-import'),
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    'less-loader'
+                ]
+            },
+            {
                 test: /\.css$/,
+                exclude: path.resolve(__dirname, 'node_modules'),
                 include: SRC_DIR,
                 // loader: 'style-loader!css-loader',
                 use: [

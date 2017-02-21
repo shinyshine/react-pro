@@ -1,0 +1,50 @@
+@import "modal.less";
+@base: #f938ab;
+
+.flex-test{
+  display: flex;
+}
+.header-container {
+  background-color: @base;
+  padding: 10px 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  h1{
+    text-align: center;
+
+  }
+  nav{
+    height: 100px;
+
+  }
+  ul li{
+    float: left;
+    padding:10px 20px;
+    a {
+      color: #555555;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+  }
+
+
+}
+
+
+
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}
