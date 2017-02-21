@@ -18,11 +18,10 @@ var config = {
         rules: [
             {
                 test: /\.(png|jpg|gif|svg)$/i,
-                loader: 'file-loader',
-                query :{
-                    limit: 200,
-                    name: 'img/[name]-[hash:5].[ext]'
-                }
+                use: [
+                    'url-loader?limit=1000&name=img/[name]-[hash:5].[ext]',
+                    'image-webpack-loader',
+                ],
             },
             {
                 test: /\.js$/,
